@@ -1,0 +1,158 @@
+@import "../../app.scss";
+
+.services {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 70px;
+  @include mobile {
+    padding: 10px 30px
+  }
+
+  .titleContainer {
+    margin-top: 30px;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    //border: 2px solid white;
+    gap: 50px;
+    padding: 0px 20px;
+
+    @include mobile {
+      width: 100%;
+      gap: 20px;
+      flex-direction: column;
+    }
+
+    .imgContainer {
+      flex: 1;
+
+      @include mobile{
+        display: flex;
+        justify-content: center;
+      }
+      img {
+        width: 240px;
+        border-radius: 38% 62% 66% 34% / 44% 40% 60% 56%;
+        @include mobile {
+          width: 180px;
+        }
+      }
+    }
+
+    .title {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      //background-color: aqua;
+
+      @include mobile {
+        text-align: center;
+        gap: 10px;
+      }
+
+      h1 {
+        font-size: 60px;
+        @include mobile{
+          font-size: 40px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        @include mobile{
+          font-size: 14px;
+        }
+      }
+
+      strong {
+        color: orange;
+      }
+
+    }
+  }
+
+  .listContainer {
+    flex: 2;
+    display: flex;
+
+    @include mobile {
+      flex-direction: row;
+      overflow-x: auto;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .box {
+      flex: 1;
+      padding: 20px;
+      //border: 0.5px solid gray;
+      display: flex;
+      flex-direction: column;
+      //justify-content: space-between;
+
+      @include mobile {
+        flex: 0 0 100vw;
+        border: none;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .mapBox {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .ItemBox {
+          display: flex;
+          flex-direction: column;
+
+          h1 {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 15px;
+          }
+
+          .date {
+            font-style: italic;
+          }
+
+          .def {
+            margin-left: 15px;
+            font-size: 13px;
+            font-style: italic;
+          }
+
+          .arrItemBox {
+            display: flex;
+            width: 90%;
+            gap: 10px;
+            @include mobile{
+              flex-wrap: wrap;
+            }
+
+            .arrItem {
+              padding: 5px;
+              background-color: white;
+              color: #0c0c1d;
+              border-radius: 5px;
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
