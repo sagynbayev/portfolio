@@ -173,9 +173,9 @@ const Services = () => {
                   onClick={() => toggleDefinitions(item.id)}
                 >
                   {activeExperience === item.id ? (
-                    <img src={"/fold.svg"} alt=""/>
+                    <img src={"/fold.png"} alt=""/>
                   ) : (
-                    <img src={"/unfold.svg"} alt=""/>
+                    <img src={"/unfold.png"} alt=""/>
                   )}
                 </button>
               </div>
