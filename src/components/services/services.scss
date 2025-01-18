@@ -6,47 +6,49 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px 70px;
+  gap: 30px;
+  padding: 40px 50px;
   @include mobile {
     padding: 10px 30px
   }
 
   .titleContainer {
-    margin-top: 30px;
-    flex: 2;
+    margin-top: 20px;
+    flex: 1;
     display: flex;
     justify-content: center;
     //border: 2px solid white;
-    gap: 50px;
-    padding: 0px 20px;
+    gap: 20px;
+    padding: 0 20px;
 
     @include mobile {
       width: 100%;
-      gap: 20px;
+      gap: 10px;
       flex-direction: column;
     }
 
     .imgContainer {
       flex: 1;
 
-      @include mobile{
+      @include mobile {
         display: flex;
         justify-content: center;
       }
+
       img {
-        width: 240px;
+        width: 230px;
         border-radius: 38% 62% 66% 34% / 44% 40% 60% 56%;
         @include mobile {
-          width: 180px;
+          width: 170px;
         }
       }
     }
 
     .title {
-      flex: 3;
+      flex: 4;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
       //background-color: aqua;
 
       @include mobile {
@@ -56,17 +58,41 @@
 
       h1 {
         font-size: 60px;
-        @include mobile{
+        @include mobile {
           font-size: 40px;
         }
       }
 
       p {
         font-size: 18px;
-        @include mobile{
+        @include mobile {
           font-size: 14px;
         }
       }
+
+      .desktop {
+        @include mobile {
+          display: none;
+        }
+        a{
+          color: orange;
+        }
+        a:hover{
+          text-decoration: underline;
+        }
+      }
+      .mobile{
+        display: none;
+        @include mobile{
+          display: block;
+          font-size: 15px;
+        }
+        a{
+          color: orange;
+          text-decoration: underline;
+        }
+      }
+
 
       strong {
         color: orange;
@@ -78,40 +104,52 @@
   .listContainer {
     flex: 2;
     display: flex;
-
+    justify-content: center;
+    gap: 0;
     @include mobile {
       flex-direction: row;
       overflow-x: auto;
-      width: 100%;
-      -webkit-overflow-scrolling: touch;
+      width: 90vw;
+      //-webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      gap: 10px;
+      justify-content: flex-start;
     }
 
     .box {
-      flex: 1;
-      padding: 20px;
-      //border: 0.5px solid gray;
+      flex: 1 1 auto;
+      max-width: calc(100% / 3 - 20px);
+      padding: 15px;
       display: flex;
       flex-direction: column;
-      //justify-content: space-between;
 
       @include mobile {
         flex: 0 0 100vw;
+        max-width: 95vw;
         border: none;
+        justify-content: flex-start;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         padding: 10px;
-        width: 100%;
+        width: 90%;
         box-sizing: border-box;
+        //justify-content: center;
+        scroll-snap-align: start;
       }
 
       h2 {
-        font-size: 40px;
+        font-size: 28px;
       }
 
       .mapBox {
         display: flex;
         flex-direction: column;
         gap: 10px;
+
+        @include mobile{
+          width: 100%;
+        }
 
         .ItemBox {
           display: flex;
@@ -124,6 +162,14 @@
           p {
             font-size: 15px;
           }
+          .toggleButton{
+            outline: none;
+            align-self: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            margin-top: 5px;
+          }
 
           .date {
             font-style: italic;
@@ -131,7 +177,7 @@
 
           .def {
             margin-left: 15px;
-            font-size: 13px;
+            font-size: 12px;
             font-style: italic;
           }
 
@@ -139,7 +185,8 @@
             display: flex;
             width: 90%;
             gap: 10px;
-            @include mobile{
+            flex-wrap: wrap;
+            @include mobile {
               flex-wrap: wrap;
             }
 
@@ -149,6 +196,9 @@
               color: #0c0c1d;
               border-radius: 5px;
 
+              @include mobile{
+                font-size: 14px;
+              }
             }
           }
         }

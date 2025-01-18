@@ -35,7 +35,8 @@
         letter-spacing: 10px;
 
         @include mobile{
-          letter-spacing: 9px;
+          font-size: 27px;
+          letter-spacing: 7px;
         }
       }
 
@@ -77,7 +78,7 @@
     height: 100%;
     position: absolute;
     top: 0;
-    right: 50px;
+    right: 100px;
     z-index: 2;
     display: flex; // Use flexbox for centering
     justify-content: center; // Center horizontally
@@ -99,7 +100,10 @@
       border-radius: 58% 42% 42% 58% / 48% 45% 55% 52%;
 
       @include mobile{
+        width: 70%;
+        height: 80%;
         border-radius: 50%;
+        //object-fit: ;
       }
     }
   }
